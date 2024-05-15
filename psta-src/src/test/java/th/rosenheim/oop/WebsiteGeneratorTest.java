@@ -2,10 +2,10 @@ package th.rosenheim.oop;
 
 import org.junit.jupiter.api.Test;
 
-class AppTest {
+class WebsiteGeneratorTest {
 
   @Test
   void testApp() {
-    App.main(new String[] {});
+    WebsiteGenerator.main(new String[] {});
   }
 }

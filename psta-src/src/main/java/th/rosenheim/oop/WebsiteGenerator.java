@@ -1,6 +1,6 @@
 package th.rosenheim.oop;
 
-public class App {
+public class WebsiteGenerator {
 
   public static void main(String[] args) {
     init();
