@@ -1,3 +1,7 @@
+# UML Diagram
+
+![UML](.pictures/App.drawio.svg)
+
 # OOP PStA Template Project
 
 ## How to get the project
