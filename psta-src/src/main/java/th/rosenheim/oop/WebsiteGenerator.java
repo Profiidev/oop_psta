@@ -31,7 +31,7 @@ public class WebsiteGenerator {
     return navigation.toString();
   }
 
-  private String generatePage(City city) {
+  public String generatePage(City city) {
     return String.format(TEMPLATE, getNavigation(), city.getContent());
   }
 
