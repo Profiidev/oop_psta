@@ -6,6 +6,8 @@ import java.util.List;
 public class App {
   public static void main(String[] args) {
     WebsiteGenerator generator = new WebsiteGenerator();
+
+    // create default cities
     generator.addCity(new SmallCity("Rosenheim", WeatherType.CLOUDY));
     generator.addCity(
         new BigCity(
@@ -18,6 +20,7 @@ public class App {
             WeatherType.SUNNY,
             List.of("Raderthal", "Ehrenfeld", "Nippes", "Poll", "Esch", "Pesch", "Kalk")));
 
+    // generate websites
     try {
       generator.generateWebsites();
     } catch (IOException e) {

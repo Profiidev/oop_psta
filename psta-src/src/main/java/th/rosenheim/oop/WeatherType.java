@@ -7,6 +7,11 @@ public enum WeatherType {
 
   public final String text;
 
+  /**
+   * Creates a new weather type with the given display text.
+   *
+   * @param text the display text
+   */
   private WeatherType(String text) {
     this.text = text;
   }

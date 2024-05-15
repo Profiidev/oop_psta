@@ -14,10 +14,16 @@ public class WebsiteGenerator {
 
   private List<City> cities;
 
+  /** Creates a new empty website generator. */
   public WebsiteGenerator() {
     this.cities = new ArrayList<>();
   }
 
+  /**
+   * Returns the navigation part of the website including all cities as HTML.
+   *
+   * @return the navigation part as HTML
+   */
   private String getNavigation() {
     StringBuilder navigation = new StringBuilder();
     navigation.append(NAME_TEMPLATE);
@@ -31,10 +37,21 @@ public class WebsiteGenerator {
     return navigation.toString();
   }
 
+  /**
+   * Returns the fully generated page of the given city as HTML including the nav part.
+   *
+   * @param city the city to generate the page for
+   * @return the page of the city as HTML
+   */
   public String generatePage(City city) {
     return String.format(TEMPLATE, getNavigation(), city.getContent());
   }
 
+  /**
+   * Generates the websites for all cities and writes them to the output directory ("out").
+   *
+   * @throws IOException if creating the directories or writing to a file fails
+   */
   public void generateWebsites() throws IOException {
     Files.createDirectories(Path.of(OUT_DIR));
     Files.write(Path.of(OUT_DIR + "index.html"), getNavigation().getBytes());
