@@ -7,7 +7,6 @@ variables:
   PROJECT_DIR: "./psta-src"
   JAR_NAME: "psta-src-1.0"
 
-
 test:
   image: gradle:8.7.0-jdk21
   stage: test
