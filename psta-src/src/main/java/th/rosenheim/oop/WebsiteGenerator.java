@@ -10,7 +10,7 @@ public class WebsiteGenerator {
   private static final String OUT_DIR = "out/";
   private static final String TEMPLATE = "<html><body>%s%s</body></html>";
   private static final String NAME_TEMPLATE = "<h1>Die Wetter-App</h1>";
-  private static final String NAVIGATION_TEMPLATE = "<a href=“%s“>%s</a>";
+  private static final String NAVIGATION_TEMPLATE = "<a href=\"%s\">%s</a>";
 
   private List<City> cities;
 
