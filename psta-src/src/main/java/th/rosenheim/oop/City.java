@@ -3,13 +3,14 @@ package th.rosenheim.oop;
 import java.util.List;
 
 public abstract class City {
-  protected static String CITY_TEMPLATE = "<p>In %s ist es %s.</p>";
+  protected static final String CITY_TEMPLATE = "<p>In %s ist es %s.</p>";
 
-  private static List<Tuple<String, String>> TO_REPLACE = List.of(
-      new Tuple<>(" ", "_"),
-      new Tuple<>("ä", "ae"),
-      new Tuple<>("ö", "oe"),
-      new Tuple<>("ü", "ue"));
+  private static final List<Tuple<String, String>> TO_REPLACE =
+      List.of(
+          new Tuple<>(" ", "_"),
+          new Tuple<>("ä", "ae"),
+          new Tuple<>("ö", "oe"),
+          new Tuple<>("ü", "ue"));
 
   protected String name;
   protected WeatherType weather;
