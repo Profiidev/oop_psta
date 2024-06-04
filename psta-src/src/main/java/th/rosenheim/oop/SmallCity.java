@@ -1,5 +1,8 @@
 package th.rosenheim.oop;
 
+/**
+ * Small City without Cityparts
+ */
 public class SmallCity extends City {
   private static final String URL_TEMPLATE = "wetter_kleinstadt_%s.html";
 

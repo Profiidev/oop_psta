@@ -3,7 +3,14 @@ package th.rosenheim.oop;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Main Class
+ */
 public class App {
+  /**
+   * Main Method
+   * @param args command line args
+   */
   public static void main(String[] args) {
     WebsiteGenerator generator = new WebsiteGenerator();
 

@@ -2,6 +2,9 @@ package th.rosenheim.oop;
 
 import java.util.List;
 
+/**
+ * Big City with Cityparts
+ */
 public class BigCity extends City {
   private static final String CITY_PARTS_TEMPLATE = "<p>Dies trifft auch für %s zu.</p>";
   private static final String URL_TEMPLATE = "wetter_grossstadt_%s.html";
@@ -28,7 +31,15 @@ public class BigCity extends City {
    */
   public String getContent() {
     String cityPart = super.getBaseContent();
-    String cityPartsPart = String.format(CITY_PARTS_TEMPLATE, String.join(", ", cityParts));
+
+    String cityPartsConcat = "";
+    if (cityParts.size() > 1) {
+      cityPartsConcat = String.join(", ", cityParts.subList(0, cityParts.size() - 1));
+      cityPartsConcat += " und " + cityParts.get(cityParts.size() - 1);
+    } else {
+      cityPartsConcat = cityParts.get(0);
+    }
+    String cityPartsPart = String.format(CITY_PARTS_TEMPLATE, cityPartsConcat);
 
     return cityPart + cityPartsPart;
   }

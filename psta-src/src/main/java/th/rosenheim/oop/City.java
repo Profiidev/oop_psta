@@ -2,8 +2,14 @@ package th.rosenheim.oop;
 
 import java.util.List;
 
+/**
+ * Base abstract Class to inherit from
+ */
 public abstract class City {
-  protected static final String CITY_TEMPLATE = "<p>In %s ist es %s.</p>";
+  /**
+   * Template for the City Content
+   */
+  protected static final String CITY_TEMPLATE = "<h2>Das Wetter für %s</h2><p>In %s ist es %s.</p>";
 
   // invalid characters and their replacements
   private static final List<Tuple<String, String>> TO_REPLACE =
@@ -13,11 +19,25 @@ public abstract class City {
           new Tuple<>("ö", "oe"),
           new Tuple<>("ü", "ue"));
 
+  /**
+   * Name of the city
+   */
   protected String name;
+  /**
+   * Weather of the city
+   */
   protected WeatherType weather;
 
+  /**
+   * Returns the Page Content for that City
+   * @return page content
+   */
   public abstract String getContent();
 
+  /**
+   * Returns the file name for that City
+   * @return file name
+   */
   public abstract String getUrl();
 
   /**
@@ -26,7 +46,7 @@ public abstract class City {
    * @return the base weather info of the city as HTML
    */
   protected String getBaseContent() {
-    return String.format(CITY_TEMPLATE, name, weather.text);
+    return String.format(CITY_TEMPLATE, name, name, weather.text);
   }
 
   /**
@@ -47,7 +67,7 @@ public abstract class City {
   protected String nameToURL() {
     String name = this.name.toLowerCase();
     for (Tuple<String, String> pair : TO_REPLACE) {
-      name = name.replace(pair._0, pair._1);
+      name = name.replace(pair._0(), pair._1());
     }
     return name;
   }

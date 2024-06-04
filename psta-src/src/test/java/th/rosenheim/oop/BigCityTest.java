@@ -19,8 +19,9 @@ public class BigCityTest {
   @Test
   public void testGetContent() {
     String expected =
-        "<p>In Test City ist es regnerisch.</p><p>Dies trifft auch für Teil 1, Teil 2, Teil 3 zu.</p>";
+        "<h2>Das Wetter für Test City</h2><p>In Test City ist es regnerisch.</p><p>Dies trifft auch für Teil 1, Teil 2 und Teil 3 zu.</p>";
     String actual = bigCity.getContent();
+    System.out.println(actual);
 
     assertEquals(expected, actual);
   }

@@ -6,6 +6,9 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class for generating the websites and index.html file
+ */
 public class WebsiteGenerator {
   private static final String OUT_DIR = "out/";
   private static final String TEMPLATE = "<html><body>%s%s</body></html>";
@@ -54,7 +57,7 @@ public class WebsiteGenerator {
    */
   public void generateWebsites() throws IOException {
     Files.createDirectories(Path.of(OUT_DIR));
-    Files.write(Path.of(OUT_DIR + "index.html"), getNavigation().getBytes());
+    Files.write(Path.of(OUT_DIR + "index.html"), String.format(TEMPLATE, getNavigation(), "").getBytes());
 
     for (City city : cities) {
       String page = generatePage(city);
@@ -62,6 +65,10 @@ public class WebsiteGenerator {
     }
   }
 
+  /**
+   * Adds a city to the Website
+   * @param city city to add
+   */
   public void addCity(City city) {
     cities.add(city);
   }
