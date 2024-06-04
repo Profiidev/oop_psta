@@ -2,9 +2,7 @@ package th.rosenheim.oop;
 
 import java.util.List;
 
-/**
- * Big City with Cityparts
- */
+/** Big City with Cityparts */
 public class BigCity extends City {
   private static final String CITY_PARTS_TEMPLATE = "<p>Dies trifft auch für %s zu.</p>";
   private static final String URL_TEMPLATE = "wetter_grossstadt_%s.html";

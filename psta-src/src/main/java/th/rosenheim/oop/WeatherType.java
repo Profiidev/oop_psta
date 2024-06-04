@@ -1,25 +1,15 @@
 package th.rosenheim.oop;
 
-/**
- * All possible Weather types
- */
+/** All possible Weather types */
 public enum WeatherType {
-  /**
-   * Sunny
-   */
+  /** Sunny */
   SUNNY("sonnig"),
-  /**
-   * rainy
-   */
+  /** rainy */
   RAINY("regnerisch"),
-  /**
-   * cloudy
-   */
+  /** cloudy */
   CLOUDY("bewölkt");
 
-  /**
-   * The Display text
-   */
+  /** The Display text */
   public final String text;
 
   /**

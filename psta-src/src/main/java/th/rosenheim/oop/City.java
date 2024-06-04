@@ -2,13 +2,9 @@ package th.rosenheim.oop;
 
 import java.util.List;
 
-/**
- * Base abstract Class to inherit from
- */
+/** Base abstract Class to inherit from */
 public abstract class City {
-  /**
-   * Template for the City Content
-   */
+  /** Template for the City Content */
   protected static final String CITY_TEMPLATE = "<h2>Das Wetter für %s</h2><p>In %s ist es %s.</p>";
 
   // invalid characters and their replacements
@@ -19,23 +15,22 @@ public abstract class City {
           new Tuple<>("ö", "oe"),
           new Tuple<>("ü", "ue"));
 
-  /**
-   * Name of the city
-   */
+  /** Name of the city */
   protected String name;
-  /**
-   * Weather of the city
-   */
+
+  /** Weather of the city */
   protected WeatherType weather;
 
   /**
    * Returns the Page Content for that City
+   *
    * @return page content
    */
   public abstract String getContent();
 
   /**
    * Returns the file name for that City
+   *
    * @return file name
    */
   public abstract String getUrl();
